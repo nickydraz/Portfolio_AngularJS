@@ -1,0 +1,249 @@
+/* Variables */
+$linkColor: #61C3FF;
+$codeBackground: "../images/code_background.png";
+$codeBackgroundFade: rgba(0, 0, 0, 0.45);
+$backgroundColor: rgb(29, 31, 33);
+$inactiveLink: #999;
+
+/* Custom Styles */
+
+body {
+    font-family: "Helvetica", Arial, sans-serif;
+    /* background-image: url("../images/footer_lodyas/footer_lodyas.png");
+    background-repeat: repeat; */
+}
+
+a {
+    text-decoration: none;
+}
+
+.middle {
+    padding-top: 70px;
+}
+
+section {
+    overflow: auto;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.center {
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+.showcase {
+    width: 100%;
+    height: auto;
+}
+
+
+/* Footer */
+
+footer {
+    margin-top: 45px;
+    padding-top: 5px;
+
+    color: $inactiveLink;
+
+    a {
+        color: $inactiveLink;
+        line-height: normal;
+        &:hover {
+          text-decoration: none;
+          color: $linkColor;
+        }
+    }
+    small {
+        float: left;
+    }
+    ul {
+        float: right;
+
+        list-style: none;
+    }
+    ul li {
+        float: left;
+
+        margin-left: 15px;
+    }
+}
+
+.footer {
+    border-color: #080808;
+    background-color: #222;
+}
+
+.footer .container {
+    max-width: 100%;
+    padding-top: 20px;
+}
+
+
+/* Header */
+
+#logo {
+    float: left;
+
+    margin-right: 10px;
+    padding-top: 12px;
+
+    text-decoration: none;
+    letter-spacing: -1px;
+
+    color: #777;
+
+    font-size: 1.7em;
+    font-weight: bold;
+    line-height: normal;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    .navbar-brand .mobile-logo {
+        padding: 5px 0;
+    }
+
+}
+
+button.navbar-toggle.collapsed {
+    border: none;
+}
+
+.mobile-logo {
+    max-width: 50%;
+    padding: 0;
+}
+
+.main-logo {
+    max-width: 35%;
+}
+.navbar-inverse .navbar-nav>li>a:focus,
+.navbar-inverse .navbar-nav>li>a:hover {
+    color: $linkColor;
+}
+
+.navbar-header:after {
+    display: inline;
+}
+
+/* Class for elements that need to be full width*/
+
+.full-width {
+    width: 100%;
+}
+
+.course-listing {
+    min-height: 300px;
+}
+
+.course-area {
+    width: 100%;
+}
+
+.navbar-inverse .navbar-nav>.active>a {
+    color: $linkColor;
+}
+
+
+/* Styling for About page */
+
+#tagLine {
+    margin-bottom: 10px;
+
+    color: white;
+    text-shadow: 1px 2px #888;
+}
+
+@media (min-width: 768px) {
+    #profilePic {
+        position: absolute;
+        left: -40%;
+
+        border: 2px solid black;
+    }
+}
+
+@media (min-width: 992px) {
+    .aboutBody {
+        background-image: -webkit-linear-gradient(top, $codeBackgroundFade, $codeBackgroundFade), url($codeBackground);
+        background-image: linear-gradient(to bottom, $codeBackgroundFade, $codeBackgroundFade), url($codeBackground);
+        background-image: -webkit-gradient(linear, left top, left bottom, from($codeBackgroundFade), to($codeBackgroundFade)), url($codeBackground);
+        background-image: -webkit-linear-gradient(top, $codeBackgroundFade, $codeBackgroundFade), url($codeBackground);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+@media (max-width: 992px) {
+    .aboutBody {
+        background-color: $backgroundColor;
+    }
+}
+
+@media (max-width: 768px) {
+    #profilePic {
+        position: relative;
+
+        border: 1px solid black;
+    }
+    .profilePic {
+        margin-bottom: 10px;
+    }
+    .aboutBody {
+        background-color: $backgroundColor;
+    }
+}
+
+
+/* Styles found at Stackoverflow:
+http://stackoverflow.com/questions/12445347/css-partial-border-to-create-place-holder
+*/
+
+#box {
+    position: relative;
+
+    margin: 30px;
+}
+
+#box > .corner {
+    position: absolute;
+
+    display: block;
+
+    width: 30px;
+    height: 50px;
+}
+
+.top {
+    top: -30px;
+
+    border-top-style: solid;
+}
+
+.bottom {
+    bottom: -30px;
+
+    border-bottom-style: solid;
+}
+
+.left {
+    left: 0;
+
+    border-left-style: solid;
+}
+
+.right {
+    right: 0;
+
+    border-right-style: solid;
+}
+
+
+/* End Stackoverflow styles */
