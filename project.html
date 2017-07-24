@@ -1,0 +1,15 @@
+<div class="container-fluid">
+    <div class="row well">
+        <div class="col-md-7">
+            <a href='{{project.Link}}' target="_blank">
+                <img class='img-rounded img-responsive img-thumbnail' ng-src='/{{project.ImageLink}}' /></a>
+        </div>
+        <div class="col-md-5">
+            <p class='lead'>
+                {{project.Title}}
+            </p>
+            <p ng-bind-html="project.detailed_description | unsafe">
+            </p>
+        </div>
+    </div>
+</div>

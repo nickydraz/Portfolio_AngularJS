@@ -1,170 +1,67 @@
-<html>
-
-    <head>
-        <!-- Meta -->
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name='viewport' content="width=device-width, initial-scale=1, maximum-scale=1">
-        <meta name="description" content="Portfolio site for Nicholas Drazenovic">
-        <meta name="author" content="Nicholas Drazenovic">
-        <!-- Control the behavior of search engine crawling and indexing -->
-        <meta name="robots" content="index,follow,noodp">
-        <!-- All Search Engines -->
-        <meta name="googlebot" content="index,follow">
-        <!-- Google Specific -->
-
-        <!-- Tells Google not to show the sitelinks search box -->
-        <meta name="google" content="nositelinkssearchbox">
-
-        <!-- Tells Google not to provide a translation for this page -->
-        <meta name="google" content="notranslate">
-        <!-- Full domain name or web address -->
-        <meta name="url" content="http://dev.ndraz.com/">
-        <!-- Makes sure your website shows up in all countries and languages -->
-        <meta name="coverage" content="Worldwide">
-        <!-- Gives a general age rating based on sites content -->
-        <meta name="rating" content="General">
-        <!-- Disable automatic detection and formatting of possible phone numbers -->
-        <meta name="format-detection" content="telephone=no">
-
-        <!-- Twitter -->
-        <meta name="twitter:card" content="summary">
-        <meta name="twitter:site" content="@nickydraz">
-        <meta name="twitter:creator" content="@nickydraz">
-        <meta name="twitter:title" content="Nicholas Drazenovic's Programming Portfolio">
-        <meta name="twitter:description" content="A well-designed and clean portfolio site that demonstrates the advantage of being a front-end developer with back-end foundations.">
-        <meta name="twitter:image" content="http://dev.ndraz.com/images/mobile-logo-twitter-black.png" />
-
-        <!--Include needed styles -->
-        <link rel="stylesheet" type="text/css" href="boot/css/bootstrap.min.css">
-        <link rel='stylesheet' type="text/css" href="css/sticky-footer.css">
-        <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-        <script src="boot/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="boot/fonts/glyphicons-halflings-regular.svg">
-        <link rel="stylesheet" type="text/css" href="css/style.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-        <script src="Javascript/app.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.16/angular-filter.js"></script>
-
-        <title>Courses | Nicholas Drazenovic</title>
-    </head>
-
-    <body>
-        <!-- Include the navbar -->
-        <!-- Begin header and navbar for page -->
-        <nav class="navbar navbar-inverse navbar-static-top">
-            <div class="container-fluid">
-                <a class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-              </button>
-                    <a class='navbar-brand hidden-xs' id="logo" href='index.html'><img class='img-responsive main-logo' src='images/logo-lg.png' /></a>
-                    <a class='navbar-brand visible-xs' id="logo" href='index.html'><img class='img-responsive mobile-logo' src='images/mobile-logo-lg.png' /></a>
-                </a>
-                <div id="navbar" class="navbar-collapse collapse text-right">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li role="presentation" id="Home">
-                            <a href='index.html'>Home</a>
-                        </li>
-                        <li role="presentation" id="Courses">
-                            <a href='courses.html'>Courses</a>
-                        </li>
-                        <li role="presentation" id="About">
-                            <a href='about.html'>About</a>
-                        </li>
-                    </ul>
-
-                </div>
-                <!--/.navbar-collapse -->
-            </div>
-        </nav>
-        <!-- Begin the main content -->
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <h4 class="text-center">Please select a course to view project samplings.</h4>
-                </div>
-            </div>
-            <div class="row">
-                <!-- Menu for larger devices -->
-                <div class="col-md-12 hidden-xs text-center">
-                    <ul class="pagination" id="courseListings">
-                        <li id="CSC115" onclick="determineCourse('CSC115');"><a>CSC 115</a></li>
-                        <li id="CSC215" onclick="determineCourse('CSC215');"><a>CSC 215</a></li>
-                        <li id="CSC415" onclick="determineCourse('CSC415');"><a>CSC 415</a></li>
-                        <li id="CSC425" onclick="determineCourse('CSC425');"><a>CSC 425</a></li>
-                        <li id="CSC495" onclick="determineCourse('CSC495');"><a>CSC 495</a></li>
-                    </ul>
-                </div>
-                <!-- Menu for mobile devices -->
-                <div class="col-xs-10 col-xs-offset-1 visible-xs-block visible-sm-block">
-                    <form class="form-group">
-                        <select class="form-control" onchange="determineCourse(this.value)">
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h4 class="text-center" style="color: white">Please select a course to view project samplings.</h4>
+        </div>
+    </div>
+    <div class="row">
+        <!-- Menu for larger devices -->
+        <div class="col-md-12 hidden-xs text-center">
+            <ul class="pagination" id="courseListings">
+                <li id="CSC115" onclick="determineCourse('CSC115');"><a>CSC 115</a></li>
+                <li id="CSC215" onclick="determineCourse('CSC215');"><a>CSC 215</a></li>
+                <li id="CSC415" onclick="determineCourse('CSC415');"><a>CSC 415</a></li>
+                <li id="CSC425" onclick="determineCourse('CSC425');"><a>CSC 425</a></li>
+                <li id="CSC495" onclick="determineCourse('CSC495');"><a>CSC 495</a></li>
+            </ul>
+        </div>
+        <!-- Menu for mobile devices -->
+        <div class="col-xs-10 col-xs-offset-1 visible-xs-block visible-sm-block">
+            <form class="form-group">
+                <select class="form-control" onchange="determineCourse(this.value)">
                             <option value="CSC115">CSC 115</option>
                             <option value="CSC215">CSC 215</option>
                             <option value="CSC415">CSC 415</option>
                             <option value="CSC425">CSC 425</option>
                             <option value="CSC495">CSC 495</option>
                         </select>
-                    </form>
-                </div>
-            </div>
-            <!--End row -->
+            </form>
+        </div>
+    </div>
+    <!--End row -->
 
-            <!-- Insert the proper course listing -->
-            <!-- Javascript will determine what fills this div.
+    <!-- Insert the proper course listing -->
+    <!-- Javascript will determine what fills this div.
                     JQuery will load the content of the course's page -->
 
-
-        </div>
-        <div class="row">
-            <div class="col-xs-12">
-                <div id="selectedCourseContent">
-                    <div class='row text-center'>
-                        <div ng-app="myApp" ng-controller="projectsController">
-                            <div class="row" ng-repeat="(key, course) in projects">
-                                <div class="row" ng-repeat="chunk in course | chunkBy: 2">
-                                    <div style="display:none;" courseName="{{key}}" class='well col-xs-12  course-listing' ng-repeat="project in chunk" ng-class='{
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <div id="selectedCourseContent">
+            <div class='row text-center'>
+                <div>
+                    <div class="row" ng-repeat="(key, course) in projects">
+                        <div class="row" ng-repeat="chunk in course | chunkBy: 2">
+                            <div style="display:none;" courseName="{{key}}" class='well col-xs-12  course-listing' ng-repeat="project in chunk" ng-class='{
                                           "col-md-6 col-md-offset-3": project.OnlyProject,
                                           "col-md-4": !project.OnlyProject,
                                           "col-md-offset-1": !project.OnlyProject && project.FirstProject,
                                           "col-md-offset-2": !project.OnlyProject && !project.FirstProject
                                           }'>
-                                        <img class='img-rounded img-responsive' ng-src='{{project.ImageLink}}' />
-                                        <p class='lead'>
-                                            {{project.Title}} {{project.FirstProject}} {{project.OnlyProject}}
-                                        </p>
-                                        <p>
-                                            {{project.Description}}
-                                        </p>
-                                </div>
-                            </div>
+                                <a href='/Project/{{project.project_id}}'>
+                                    <img class='img-rounded img-responsive' ng-src='{{project.ImageLink}}' />
+                                </a>
+                                <p class='lead'>
+                                    {{project.Title}} {{project.FirstProject}} {{project.OnlyProject}}
+                                </p>
+                                <p>
+                                    {{project.Description}}
+                                </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        </div>
-
-        <!-- Begin footer -->
-        <footer class='footer'>
-            <div class="container">
-                <div class='col-xs-6'>
-                    <a target="_blank" href='https://www.linkedin.com/in/nicholas-drazenovic-0b5565b8'>
-                    LinkedIn
-                    </a>
-                </div>
-                <div class="col-xs-6 text-right">
-                    <a target="_blank" href='/documents/N_Drazenovic_Resume.pdf'>Resume</a>
-                </div>
-            </div>
-        </footer>
-        <!-- End footer -->
-    </body>
-
-</html>
-
-</html>
+    </div>
+</div>
+</div>

@@ -42,13 +42,15 @@
         <script src="boot/js/bootstrap.min.js"></script>
         <link rel="stylesheet" type="text/css" href="boot/fonts/glyphicons-halflings-regular.svg">
         <link rel="stylesheet" type="text/css" href="css/style.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-        <script src="Javascript/homeApp.js"></script>
+        <script src="Javascript/angular.js"></script>
+        <script src="//unpkg.com/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.16/angular-filter.js"></script>
+        <script src="Javascript/app.js"></script>
 
-        <title>Home | Nicholas Drazenovic</title>
+        <title>Nicholas Drazenovic</title>
     </head>
 
-    <body>
+    <body ng-app="myApp">
         <!-- Include the navbar -->
         <!-- Begin header and navbar for page -->
         <nav class="navbar navbar-inverse navbar-static-top">
@@ -60,19 +62,19 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-                    <a class='navbar-brand hidden-xs' id="logo" href='index.html'><img class='img-responsive main-logo' src='images/logo-lg.png' /></a>
-                    <a class='navbar-brand visible-xs' id="logo" href='index.html'><img class='img-responsive mobile-logo' src='images/mobile-logo-lg.png' /></a>
+                    <a class='navbar-brand hidden-xs' id="logo" href='/'><img class='img-responsive main-logo' src='images/logo-lg.png' /></a>
+                    <a class='navbar-brand visible-xs' id="logo" href='/'><img class='img-responsive mobile-logo' src='images/mobile-logo-lg.png' /></a>
                 </a>
                 <div id="navbar" class="navbar-collapse collapse text-right">
                     <ul class="nav navbar-nav navbar-right">
-                        <li role="presentation" id="Home">
-                            <a href='index.html'>Home</a>
+                        <li ng-class="{active: activetab == '/'}" role="presentation" id="Home">
+                            <a href='/'>Home</a>
                         </li>
-                        <li role="presentation" id="Courses">
-                            <a href='courses.html'>Courses</a>
+                        <li ng-class="{active: activetab == '/Courses'}" role="presentation" id="Courses">
+                            <a href='/Courses'>Courses</a>
                         </li>
-                        <li role="presentation" id="About">
-                            <a href='about.html'>About</a>
+                        <li ng-class="{active: activetab === '/About'}" role="presentation" id="About">
+                            <a href='/About'>About</a>
                         </li>
                     </ul>
 
@@ -80,39 +82,7 @@
                 <!--/.navbar-collapse -->
             </div>
         </nav>
-
-        <div class='container'>
-            <div class='text-center jumbotron'>
-                <h2>Featured Projects</h2>
-                <p class='lead'>A couple select projects from various Computer Science courses</p>
-            </div>
-        </div>
-        <!-- End container -->
-
-        <div class="row">
-            <div class="col-xs-12">
-                <div ng-app="homeApp" ng-controller="featuredController" class='row text-center'>
-                    <div class='well col-md-4 col-md-offset-1'>
-                        <a href='Courses/projectDetailed.php?project_id={{featured[0].project_id}}'><img class='img-rounded img-responsive' ng-src='{{featured[0].ImageLink}}' /></a>
-                        <p class='lead'>
-                            {{featured[0].Title}}
-                        </p>
-                        <p>
-                            {{featured[0].Description}}
-                        </p>
-                    </div>
-                    <div class='well col-md-4 col-md-offset-2'>
-                        <a href='Courses/projectDetailed.php?project_id={{featured[1].project_id}}'><img class='img-rounded img-responsive' ng-src='{{featured[1].ImageLink}}' /></a>
-                        <p class='lead'>
-                            {{featured[1].Title}}
-                        </p>
-                        <p>
-                            {{featured[1].Description}}
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <ui-view></ui-view>
         <!-- Begin footer -->
         <footer class='footer'>
             <div class="container">

@@ -1,0 +1,32 @@
+<div class='container'>
+    <div class='text-center jumbotron'>
+        <h2>Featured Projects</h2>
+        <p class='lead'>A couple select projects from various Computer Science courses</p>
+    </div>
+</div>
+<!-- End container -->
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class='row text-center'>
+            <div class='well col-md-4 col-md-offset-1'>
+                <a href='Courses/projectDetailed.php?project_id={{featured[0].project_id}}'><img class='img-rounded img-responsive' ng-src='{{featured[0].ImageLink}}' /></a>
+                <p class='lead'>
+                    {{featured[0].Title}}
+                </p>
+                <p>
+                    {{featured[0].Description}}
+                </p>
+            </div>
+            <div class='well col-md-4 col-md-offset-2'>
+                <a href='Courses/projectDetailed.php?project_id={{featured[1].project_id}}'><img class='img-rounded img-responsive' ng-src='{{featured[1].ImageLink}}' /></a>
+                <p class='lead'>
+                    {{featured[1].Title}}
+                </p>
+                <p>
+                    {{featured[1].Description}}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
