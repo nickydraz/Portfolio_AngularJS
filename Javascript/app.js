@@ -56,7 +56,7 @@ app.config(function ($stateProvider, $locationProvider, $urlRouterProvider) {
         var homeState = {
             name: 'home',
             url: '/',
-            templateUrl: '../featured.html',
+            templateUrl: '/featured.html',
             controller: 'featuredController'
         };
         var coursesState = {
