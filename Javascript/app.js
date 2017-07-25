@@ -2,6 +2,8 @@ var app = angular.module('myApp', ['angular.filter', 'ui.router']);
 
 app.controller('projectsController', function ($scope, $http) {
     $scope.projects = null;
+    $('body')
+        .removeClass('aboutBody');
     $http({
             method: "GET",
             url: "https://projects.ndraz.com/GetByCourse.php"
@@ -13,6 +15,8 @@ app.controller('projectsController', function ($scope, $http) {
 
 app.controller('featuredController', function ($scope, $http) {
     $scope.featured = null;
+    $('body')
+        .removeClass('aboutBody');
     $http({
             method: "GET",
             url: "https://projects.ndraz.com/GetFeatured.php"
@@ -25,6 +29,8 @@ app.controller('featuredController', function ($scope, $http) {
 
 app.controller('detailController', function ($scope, $http, $stateParams) {
     $scope.project = null;
+    $('body')
+        .removeClass('aboutBody');
     $http({
             method: "GET",
             url: "https://projects.ndraz.com/GetProject.php?Id=" + $stateParams.projectId
@@ -32,6 +38,11 @@ app.controller('detailController', function ($scope, $http, $stateParams) {
         .then(function successCallback(response) {
             $scope.project = response.data.Projects[0];
         });
+});
+
+app.controller('aboutController', function ($scope) {
+    $('body')
+        .addClass('aboutBody');
 });
 
 app.config(function ($stateProvider, $locationProvider, $urlRouterProvider) {
@@ -63,7 +74,8 @@ app.config(function ($stateProvider, $locationProvider, $urlRouterProvider) {
         var aboutState = {
             name: 'about',
             url: '/About',
-            templateUrl: '/about.html'
+            templateUrl: '/about.html',
+            controller: 'aboutController'
         };
 
         $stateProvider.state(homeState);
@@ -85,8 +97,6 @@ app.filter('unsafe', function ($sce) {
         return $sce.trustAsHtml(val);
     };
 });
-
-
 
 
 function determineCourse(courseName) {
